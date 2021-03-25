@@ -15,6 +15,12 @@ class Rating extends Component {
             editable: this.props.editable != null ? this.props.editable : true
         }
     }
+    
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.rating !== this.props.rating) {
+            this.setState({rating: this.props.rating})   
+        }
+    }
 
     _onRate(rating) {
         this.setState({rating});
