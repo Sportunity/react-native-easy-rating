@@ -39,8 +39,8 @@ class Rating extends Component {
                 onPress={()=>this._onRate(i)}
             >
                 <Image style={
-                    this.props.style
-                    ?   {...this.props.style, height:this.state.iconHeight,width:this.state.iconWidth}
+                    this.props.starStyle
+                    ?   {...this.props.starStyle, height:this.state.iconHeight,width:this.state.iconWidth}
                     :   {height:this.state.iconHeight,width:this.state.iconWidth}
                     }
                        source={this.state.rating>=i?this.state.iconSelected:this.state.iconUnselected}/>
