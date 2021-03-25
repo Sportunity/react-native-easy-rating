@@ -38,7 +38,11 @@ class Rating extends Component {
                 style={{height:this.state.iconHeight,width:this.state.iconWidth}}
                 onPress={()=>this._onRate(i)}
             >
-                <Image style={{height:this.state.iconHeight,width:this.state.iconWidth}}
+                <Image style={
+                    this.props.style
+                    ?   {...this.props.style, height:this.state.iconHeight,width:this.state.iconWidth}
+                    :   {height:this.state.iconHeight,width:this.state.iconWidth}
+                    }
                        source={this.state.rating>=i?this.state.iconSelected:this.state.iconUnselected}/>
             </TouchableWithoutFeedback>)
         }
